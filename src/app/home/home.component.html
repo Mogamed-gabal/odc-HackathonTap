@@ -1,0 +1,301 @@
+<nav class="navbar navbar-expand-lg ">
+    <div class="container">
+        <!-- nav-bar -->
+        <!-- left-side-nav -->
+      <a class="navbar-brand position-relative" href="#">
+        
+    </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active " aria-current="page" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Features</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link active" href="#">How it work</a>
+          </li>
+          <li class="nav-item ">
+            <a routerLink="" class="nav-link active ">about us</a>
+          </li>
+        </ul>
+        <!-- right-side-nav -->
+       <div class="auth-icons me-2 d-flex " *ngIf="!isLogin">
+            <a  class="btn  regist" routerLink="/register" >Creat an account</a>
+            <a  class="btn ms-2 login-btn" routerLink="/login">sign in</a>
+       </div>
+        <div  class="auth-icons me-2  d-flex align-items-center">
+      <img  src="../../assets/img/man-avatar-character-isolated-icon-free-vector.jpg" class=" " style="width:54px" alt=""*ngIf="isLogin" >   
+      <p  style="font-size: 18px;
+      color: white;
+      font-family: Poppins;
+      font-weight: 700;
+      padding-left: 17px;
+      letter-spacing: 1px;
+      font-style: normal;
+      margin: 0;
+      cursor: pointer;
+      padding-bottom: 8px;
+      "*ngIf="isLogin" routerLink="/userPage">{{userName}}</p>
+    
+    </div> 
+      </div>
+    </div>
+  </nav>
+  <!-- end nav-bar -->
+ 
+ <!-- start project-header -->
+ <div class="header">
+    <div class="header-body d-flex jsutify-content-between">
+      <div class="container">
+        <div class="row">
+            <!-- start left-sideHeader(text) -->
+        <div class="col-md-6 header-text">
+        <h2><span style="color: #F16E00;">  Easy ,</span> way to manages all your finanical tasks</h2>
+        <div class="buttons d-flex pt-5 ">
+        <button (click)="  checkToken() " class=" button-56 ">Get started <span class=" ps-3" style="font-size: 21px;"><i class="fa-sharp  fa-arrow-right"></i></span></button>
+        <button class=" btn btn-secondary learn-btn ms-4 ">Learn more</button>'<!-- HTML !-->
+        </div>
+        </div>
+          <!-- start right-sideHeader(assest) -->
+        <div class="col-md-6">
+            <img src="../../assets/img/Plain credit card-pana 1 (1).png" class=" w-100 header-img" alt="">
+        </div>
+        </div>
+        <div class=" w-100 text-center up-dowen">
+        <a href="#about">
+        <svg class="arrows">
+        <path class="a1" d="M0 0 L30 32 L60 0"></path>
+        <path class="a2" d="M0 20 L30 52 L60 20"></path>
+        <path class="a3" d="M0 40 L30 72 L60 40"></path>
+        </svg>
+         </a>
+            
+        </div>
+        </div>
+    </div>
+    
+  </div>
+  <!-- end projetc-header -->
+  <!-- start services section -->
+  <section class="services bg-light wow bounceInUp"  data-wow-delay="0.5s" id="services">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="img-box">
+                    <img src="../../assets/img/ATM machine-bro 1.png" class="w-100 
+                    " alt="">
+                </div>
+            </div>
+            <div class="col-md-6 right-side ">
+                <p  class="btn btn-secondary mb-3 ">our best feature</p>
+                <h3 class="heading">Lets see what Tap Cash can do for you</h3>
+                <p class="text-muted heading-paragraph">Lets see what Tap Cash can do for you Lets see what Tap Cash can do for youLets see what Tap Cash can do for you</p>
+                <div class="services">
+                    <div class="row gx-5">
+                     <div class="col-md-4">
+                        <div class="box text-center">
+                              <img class="
+                                " src="../../assets/img/Vector.png" alt="">
+                                <h3>Pocket & saving plan features</h3>
+                                 </div>
+                     </div>
+                     
+                     <div class="col-md-4 ">
+                        <div class="box text-center second
+                        ">
+                             <img class="
+                                " src="../../assets/img/Vector (2).png" alt="">
+                                <h3>Multi-Devices
+                                    support access</h3>
+                                 </div>
+                        </div>
+                     <div class="col-md-4 ">
+                        <div class="box text-center second">
+                            <img class="
+                                " src="../../assets/img//Vector (1).png" alt="">
+                                <h3>secure payment &
+                                    transaction</h3>
+                                
+                            
+                        </div>
+
+                     </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+      
+    </div>
+
+
+  </section>
+  <!-- end section -->
+<!--start  -->
+<section class="about wow fadeInDown" data-wow-delay="0.5s" id="about">
+<div class="headers w-100 text-center">
+        <h3>we have solution that work for you</h3>
+</div>
+ <div class="about-boxes position-relative pt-5">
+            <div class="right wow fadeInLeft pt-4" data-wow-delay="0.7s">
+                <div class="container w-75 d-flex justify-content-between me-0">
+                    <div class="box-details px-3 ">
+                        <h2 class=" pt-2">Lets see what Tap Cash can do for you</h2>
+                        <p>Lets see what Tap Cash can do for you Lets see what Tap Cash can do for you Lets see what Tap Cash can do for you</p>
+                        <button class="btn btn-secondary learn-more px-4 my-4 ms-5 ">learn more</button>
+                    </div>
+                    <div class="box-img">
+                        <img src="../../assets/img/Payment Information-cuate 1.png" class=" w-100" alt="">
+                    </div>
+                </div>
+                    
+            </div>
+
+            <div class="left pt-5 wow fadeInRight" data-wow-delay="0.7s">
+                <div class="container w-75 d-flex justify-content-between ms-0">
+                    <div class="box-img">
+                        <img src="../../assets/img/Wallet-bro 1.png" class=" w-100" alt="">
+                    </div>
+                    <div class="box-details ">
+                        <h2 class=" pt-2">Less confusing</h2>
+                        <p>Lets see what Tap Cash can do for you Lets see what Tap Cash can do for you Lets see what Tap Cash can do for you</p>
+                        <button class="btn btn-secondary learn-more px-4 mt-3 me-0 ">learn more</button>
+                    </div>
+                   
+                </div>
+                    
+            </div>
+</div>
+</section>
+<div class="cooporations py-5 m-0">
+    <div class="container bg-white">
+        <div class="row d-flex align-items-center justify-content-center">
+            
+            <div class="col-md-3">
+                <div class="coo-box p-3">
+                        <img class="w-100" src="../../assets/img/Banque du Caire2.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="coo-box p-3">
+                        <img class="w-100" src="../../assets/img/images 1.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="coo-box p-3">
+                        <img class="w-100" src="../../assets/img/download (2).png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="additional w-100">
+    <div class="row w-100 m-0 d-flex align-items-center justify-content-between">
+        
+            <div class="col-md-3">
+                <div class="add-box">
+                    <div class="details d-flex">
+                        <h1>7+</h1>
+                        <p>Please Enter the beneficiary </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="add-box">
+                    <div class="details d-flex">
+                        <h1>18+</h1>
+                        <p>Please Enter the beneficiary </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="add-box">
+                    <div class="details d-flex">
+                        <h1>784+</h1>
+                        <p>Please Enter the beneficiary </p>
+                    </div>
+                </div>
+            </div>
+    
+    </div>
+</div>
+<footer class="">
+    <div class="container-fluid ">
+        <div class="row gx-5 d-flex justify-content-betwee px-3 w-100">
+            <div class="container-fluid d-flex">
+                <!-- first box(about and page links) -->
+            
+                <div class="col-md-3  wow fadeInLeft" data-wow-delay="0.5s">
+                    <div class="first-box">
+                        <h3 class="pb-3"><span style="color:#F16E00">T</span>ap cash</h3>
+                        <p>Please Enter the beneficiary information you would like to transfer to Please Enter the beneficiary information you would like to transfer</p>
+                        <ul class="d-flex list-unstyled">
+                            <li class="px-2">
+                                <i class="fa-brands fa-square-facebook"></i>
+                            </li>
+                            <li class="px-2">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </li>
+                            <li class="px-2">
+                                <i class="fa-brands fa-instagram "></i>
+                            </li>
+                        </ul>
+                    </div>
+                       
+                </div>
+                <!-- second-box(important links) -->
+                <div class="col-md-3  wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="ps-5 second-box">
+                        <h4>Usefull link</h4>
+                        <ul class=" ps-0 ms-1 ">
+                        <div class="d-flex justify-center ">
+                                <p class="ms-0 pe-4">Home</p>
+                                <p>Policy</p>
+                            </div>
+                            <div class="d-flex justify-center ">
+                                <p class="ms-0 pe-3">About us</p>
+                                <p>Term</p>
+                            </div>
+                            <div class="d-flex justify-center ">
+                                <p class="ms-0 pe-3">Services</p>
+                                <p>Help</p>
+                            </div>
+                            <div class="d-flex justify-center ">
+                                <p class="ms-0 pe-4">Events</p>
+                                <p>FAQs</p>
+                            </div>
+                        </ul>
+                    </div>
+               
+                </div>
+                <!-- third-box(some instructions) -->
+                <div class="col-md-3  wow fadeInDownBig" data-wow-delay="0.5s">
+                <div class="third-box">
+                    <h3>Recent Post</h3>
+                    <p>Please Enter the beneficiary information you would like to transfer to Pl</p> <br>
+                    <p>Please Enter the beneficiary information you would like to transfer to Pl Please Enter the beneficiary information you would like to transfer to Please Enter the </p>
+                </div>
+                </div>
+                <!--fourth-box -->
+                <div class="col-md-3  wow fadeInRight" data-wow-delay="0.5s">
+                    <div class="fourth-box">
+                        <h3>Contact</h3>
+                        <ul class="list-unstyled">
+                            <li class=" mb-2 py-1"><span class="pe-2"><i class="fa-solid fa-envelope"></i></span>Please Enter the beneficiary information you would like to transfer to Pl</li>
+                            <li class=" mb-2 py-2"><span class="pe-2"><i class="fa-solid fa-location-dot"></i></span>Please Enter the beneficiary </li>
+                            <li class=" mb-2 py-2"><span class="pe-2"><i class="fa-solid fa-phone"></i></span>Please Enter the beneficiary </li>
+                        </ul>
+
+                    </div>
+                </div>
+                 </div>
+                 </div>
+                 </div>
+</footer>
+
+<!--end  -->

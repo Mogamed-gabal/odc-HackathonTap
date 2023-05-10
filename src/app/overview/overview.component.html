@@ -1,0 +1,30 @@
+        <div *ngIf="displayTransition" class="transactions-history">
+        <div class="heading pt-3 ps-3">
+        <h2>Last transaction</h2>
+        </div>
+        <div class="history w-100 py-3 mt-2">
+        <div class="history-filters">
+            <!-- transactions -->
+            <ul class="list-unstyled   w-100" *ngFor="let trans of transactions">
+                <li class=" d-flex justify-content-between align-items-center w-100 py-2 mb-2  proccess-details">
+                    <div class="user-data d-flex">
+                    <span class=" px-1">Mar 22</span> <img src="../../assets/img/Rectangle.png" alt=""> <p class=" px-2">Ahmed mohamed</p>
+                    </div>
+
+                    <p class="purbose">Education</p>
+                    <!-- proccess state -->
+                    <div class="status d-flex ">
+                        <span *ngIf="success" class="success"></span>
+                        <p>{{trans.status}}</p>
+                    </div>
+
+                    <p class="amount">$ {{trans.amount}}</p>
+                </li>
+                
+            </ul>
+        </div>
+        </div>
+        </div>
+        <div class="w-100">
+            <p *ngIf="!displayTransition" class=" alert alert-danger">you don't have any transactinons yet</p>
+        </div>

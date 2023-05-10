@@ -1,0 +1,62 @@
+<div class="login w-100 vh-100">
+    <div class="row gx-4 w-100 ps-5 d-flex justify-content-between">
+        <!-- left-side(loginForm) -->
+            <div class="col-md-6  left-side ">
+                <div class="login-heading d-flex justify-content-between">
+                    <div class="text">
+                        <h2>Reset<br>
+                            password ? </h2>
+                    <p>Dont worry it  happens please enter the address associated with your account</p>
+                    </div>
+                    <!-- page logo -->
+                    <div class="logo">
+                        <img src="../../assets/img/logo.png" alt="">
+                     </div>
+                 </div>
+                 
+                <form [formGroup]="resetPass" (ngSubmit)="sendData(resetPass)" action="">
+                    <!-- phone number lables -->
+                    <label for="NewPassword">New Password Number</label>
+                    <input type="text" formControlName="newPassword" name="New Password" id="newPassword" class="form-control mb-2">
+                        <!-- errors div -->
+                        <div *ngIf=" resetPass.get('newPassword')?.errors&&resetPass.get('newPassword')?.touched">
+                            <p *ngIf="resetPass.get('newPassword')?.getError('required')" class=" alert alert-danger pt-1">
+                                New Password 
+                            </p>
+                            
+                            
+
+                        </div>
+                        
+
+                    <label for=" passwordRestVerified ">Confirm New Password</label>
+                    <input type="Confirm New Password" formControlName="passwordRestVerified" name="passwordRestVerified" id="passwordRestVerified  " class="form-control mb-2">
+                    <!-- Confirm New Password errors alerts -->
+                    <div *ngIf=" resetPass.get('passwordRestVerified')?.errors&&resetPass.get('passwordRestVerified')?.touched">
+                        <p *ngIf="resetPass.get('passwordRestVerified')?.getError('required')" class=" alert alert-danger pt-1">
+                            Confirm New Password is requierd
+                        </p>
+                        <!-- <p *ngIf="resetPass.get('password')?.getError('pattern')" class=" alert alert-danger pt-1">
+                            Incorrect password
+                        </p> -->
+                        
+
+                    </div>
+
+
+                    <!-- submit btn and forgrt pass link -->
+                   
+                    <button [disabled]="resetPass.invalid" class="btn btn-primary px-5 w-50 m-auto py-2" type="submit">
+                       <span >submit</span> 
+                    </button>
+                
+                </form>
+            </div>
+            <!-- right-side(page-img) -->
+            <div class="col-md-5 right-side  p-0">
+                <div class="img-box">
+                    <img src="../../assets/img/registration.png " class="w-100 vh-100" alt="">
+                </div>
+            </div>
+    </div>
+</div>

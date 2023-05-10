@@ -1,0 +1,118 @@
+<div class="login w-100 vh-100">
+    <div class="row gx-4 w-100 ps-5 d-flex justify-content-between">
+        <div class="error w-100 text-center">
+            <p *ngIf="isError" class=" alert alert-danger">{{errMessage}}</p>
+        </div>
+        <!-- left-side(registerForm) -->
+            <div class="col-md-6  left-side ">
+                <div class="login-heading d-flex justify-content-between">
+                    <div class="text">
+                        <h2>Create an account</h2>
+                    <p>Sign up now and unlock exclusive access!</p>
+                    </div>
+                    <!-- page logo -->
+                    <div routerLink="/Home" class="logo">
+                        <img src="../../assets/img/logo.png" alt="">
+                     </div>
+                 </div>
+                    
+                 <form [formGroup]="registerForm"  (ngSubmit)="sendData(registerForm)">
+    
+                    <div class="name d-flex justify-content-between">
+                     <div class="first-name">
+                     <label for="name">FirstName</label>
+                     <input type="text" id="name" formControlName="name" class=" form-control">
+                     <!-- first-name errors ALERTS -->
+                     <div *ngIf="registerForm.get('name')?.errors&&registerForm.get('name')?.touched">
+                         <p *ngIf="registerForm.get('name')?.getError('required')" class="alert alert-danger" > name is requierd</p>
+                         <p *ngIf="registerForm.get('name')?.getError('maxlength')" class="alert alert-danger" > name can not be more than25</p>
+                         <p *ngIf="registerForm.get('name')?.getError('minlength')" class="alert alert-danger" > name can not be less than6</p>
+                     </div>
+                     </div>
+                     <!-- <div class="second-name">
+                         <label for="secondName">FirstName</label>
+                         <input type="text" id="firstName" formControlName="name" class=" form-control">
+                         </div> -->
+                     
+                    </div>
+                   
+                    <!-- mobile number -->
+                    <label for="phone">MobileNum</label>
+                    <input id="phone" type="text" class="form-control mb-2" formControlName="phone">
+                    <!-- phonNum errors ALERTS -->
+                    <div *ngIf="registerForm.get('phone')?.errors&&registerForm.get('phone')?.touched">
+                     <p *ngIf="registerForm.get('phone')?.getError('required')" class="alert alert-danger" > Phone Number is requierd</p>
+                     <p *ngIf="registerForm.get('phone')?.getError('pattern')" class="alert alert-danger" > Please Enter Valid Mobile Number</p>
+                     </div>
+                     
+                     <!-- national id -->
+            
+                         <div class="chieldId">
+                         <label for="nationalId">NationalId</label>
+                        <input type="text" class="form-control" formControlName="ssid">
+                        <!-- ssid(nationalId) errors ALERTS -->
+                         <div *ngIf="registerForm.get('ssid')?.errors&&registerForm.get('ssid')?.touched">
+                          <p *ngIf="registerForm.get('ssid')?.getError('required')" class="alert alert-danger" > nationalID is requierd</p>
+                          <p *ngIf="registerForm.get('ssid')?.getError('pattern')" class="alert alert-danger" > nationalID should be 14number</p>
+                         </div>
+                         </div>
+
+                         
+                
+                    
+                     <!-- email -->
+                     <label for="email">E-mail</label>
+                     <input type="email" id="email" class="form-control mb-2" formControlName="email">
+                     <!-- email errors ALERTS -->
+                         <div *ngIf="registerForm.get('email')?.errors&&registerForm.get('email')?.touched">
+                          <p *ngIf="registerForm.get('email')?.getError('required')" class="alert alert-danger" > email is requierd</p>
+                          <p *ngIf="registerForm.get('email')?.getError('email')" class="alert alert-danger" >Please Enter valid E-mail</p>
+                         </div>
+                 
+                         <div class="password d-flex justify-content-between mb-2">
+                             <div class="password">
+                             <label for="password">Password</label>
+                            <input type="password" class="form-control mb-2" id="password" formControlName="password">
+                            <!-- password errors ALERTS -->
+                             <div *ngIf="registerForm.get('password')?.errors&&registerForm.get('password')?.touched">
+                              <p *ngIf="registerForm.get('password')?.getError('required')" class="alert alert-danger" > Password is requierd</p>
+                              <p *ngIf="registerForm.get('password')?.getError('pattern')" class="alert alert-danger" >Password should start with Captial char the small thn nums(Mo123456)</p>
+                             </div>
+                             </div>
+                             
+                             
+                             <!-- pass confirmation -->
+                             <div class="repass">
+                                 <label for="confirmPassword">rePassword</label>
+                                <input type="password" id="confirmPassword" class="form-control mb-2" formControlName="confirmPassword">
+                                <!-- passwordConfirmation errors ALERTS -->
+                                <div *ngIf="registerForm.get('confirmPassword')?.errors&&registerForm.get('confirmPassword')?.touched">
+                                 <p *ngIf="registerForm.get('confirmPassword')?.getError('required')" class="alert alert-danger" > PssConfirmation is requeird</p>
+                                 <p *ngIf="registerForm.get('confirmPassword')?.getError('pattern')" class="alert alert-danger" >password should contain a capital and smal letter with specaial charcter</p>
+                             </div>
+                             </div>
+                         </div>
+                 
+                         <!-- forget Pass -->
+                         <div class="d-flex w-50 justify-content-between mb-2 forget">
+                             <a class="text-decoration-none py-2" routerLink="/login">already have an account ?</a>
+                         </div>
+                        
+                 
+                         <button [disabled]="registerForm.invalid" class="btn btn-primary px-5" type="submit">
+                             <span *ngIf="!isLoading ">submit</span> 
+                             <span *ngIf="isLoading" class=""><i class="fas fa-spinner fa-spin"></i></span>
+                           
+                         </button>
+                        
+                     
+                 </form>
+            </div>
+            <!-- right-side(page-img) -->
+            <div class="col-md-5 right-side  p-0">
+                <div class="img-box">
+                    <img src="../../assets/img/registration.png " class="w-100 vh-100" alt="">
+                </div>
+            </div>
+    </div>
+</div>

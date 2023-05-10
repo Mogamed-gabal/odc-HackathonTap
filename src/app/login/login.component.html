@@ -1,0 +1,71 @@
+<div class="login w-100 vh-100">
+    <div class="row gx-4 w-100 ps-5 d-flex justify-content-between">
+        
+        <!-- left-side(loginForm) -->
+            <div class="col-md-6  left-side ">
+                <div class="error w-100 text-center py-3">
+                 <p class="alert alert-danger " *ngIf="err">{{errMessage}}</p>
+                </div>
+                <div class="login-heading d-flex justify-content-between">
+                <div class="text">
+                <h2>Welcome back !</h2>
+                <p>Please Enter Your Credentials to access your account</p>
+                </div>
+                    <!-- page logo -->
+                    <div class="logo">
+                    <img src="../../assets/img/logo.png" alt="">
+                    </div>
+                    </div>
+                 
+                <form [formGroup]="loginForm" (ngSubmit)="sendData(loginForm)" action="">
+                    <!-- phone number lables -->
+                    <label for="phone">National-ID</label>
+                    <input type="text" formControlName="ssid" name="phone" id="ssid" class="form-control mb-2">
+                        <!-- errors div -->
+                        <div *ngIf=" loginForm.get('ssid')?.errors&&loginForm.get('ssid')?.touched">
+                            <p *ngIf="loginForm.get('ssid')?.getError('required')" class=" alert alert-danger pt-1">
+                                ssid Number is requierd
+                            </p>
+                            <p *ngIf="loginForm.get('ssid')?.getError('pattern')" class=" alert alert-danger pt-1">
+                                National should be 14num
+                            </p>
+                            
+
+                        </div>
+                        
+
+                    <label for="password">password</label>
+                    <input type="password" formControlName="password" name="password" id="password" class="form-control mb-2">
+                    <!-- password errors alerts -->
+                    <div *ngIf=" loginForm.get('password')?.errors&&loginForm.get('password')?.touched">
+                        <p *ngIf="loginForm.get('password')?.getError('required')" class=" alert alert-danger pt-1">
+                            password is requierd
+                        </p>
+                        <p *ngIf="loginForm.get('password')?.getError('pattern')" class=" alert alert-danger pt-1">
+                            Incorrect password
+                        </p>
+                        
+
+                    </div>
+
+
+                    <!-- submit btn and forgrt pass link -->
+                    <div class="d-flex w-50 justify-content-between mb-3 forget">
+                            <a class="text-decoration-none py-2" routerLink="/getPass">Forget Password</a>
+                            <a class="text-decoration-none py-2 creat-account" routerLink="/register">I don't have an account..!</a>
+                    </div>
+                    <button [disabled]="loginForm.invalid" class="btn btn-primary px-5 w-50 m-auto py-2" type="submit">
+                       <span *ngIf="!isLoading">submit</span> 
+                       <span *ngIf="isLoading" class=""><i class="fas fa-spinner fa-spin"></i></span>
+                    </button>
+                
+                </form>
+            </div>
+            <!-- right-side(page-img) -->
+            <div class="col-md-5 right-side  p-0">
+                <div class="img-box">
+                    <img src="../../assets/img/registration.png " class="w-100 vh-100" alt="">
+                </div>
+            </div>
+    </div>
+</div>

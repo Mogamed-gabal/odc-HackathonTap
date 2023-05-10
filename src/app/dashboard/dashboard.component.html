@@ -1,0 +1,598 @@
+         <div class="row wallet-page m-0 w-100">
+    <!-- side-nav -->
+        <div class="col-md-3 p-0">
+        <div class="left-side-box">
+        <div class="brand ">
+            <div class="heading">
+                <h3 routerLink="/Home" class="border-bottom d-flex justify-content-center align-items-center">
+                    Tap Cash
+                </h3>
+            </div>
+           <!-- features links -->
+            <div class="menue">
+                <ul class="list-unstyled">
+                    <caption>Menue</caption>
+                    <li routerLink="/userPage/overview" routerLinkActive="active" class="">
+                        <span><i style="color: #FF7A00;;" class="fa-solid fa-boxes-stacked pe-3"></i></span>Overview
+                    </li>
+                    <li *ngIf="isPaernt" routerLink="/userPage/paymentMethods" routerLinkActive="active">
+                        <span><i style="color: #FF7A00;;" class="fa-solid fa-boxes-stacked pe-3"></i></span>Payment and transfer Method
+                    </li>
+                    <li *ngIf="isPaernt" routerLink="/userPage/Childrensexpenses" routerLinkActive="active">
+                        <span><i style="color: #FF7A00;;" class="fa-solid fa-boxes-stacked pe-3"></i></span>Childrens expenses
+                    <li routerLink="/userPage/generateCard" routerLinkActive="active">
+                        <span><i style="color: #FF7A00;;" class="fa-solid fa-boxes-stacked pe-3"></i></span>Generate Card
+                    <li *ngIf="isPaernt" (click)="  logOut()">
+                        <span><i style="color: #FF7A00;;" class="fa-solid fa-boxes-stacked pe-3"></i></span>Log out
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        </div>
+    <!-- right-side(services-container) -->
+        </div>
+    <!-- page content -->
+        <div class="col-md-9 wallet me-0 p-0 ">
+        <div class="right-side-box">
+        <div class="heading w-100">
+            <h3>Dash Board</h3>
+            <p>Send and receive funds with pleasure</p>
+        </div>  
+        <div style="background-color: #D5D3D3;" class="row gx-5 w-100 lower-page m-0 position-relative ">
+            <div class="col-md-8 position-relative">
+            <!-- user wallet details -->
+            <div *ngIf="forParent" class="wallet-details ">
+            <div class="container">
+            <div class="first-line d-flex justify-content-between">
+            <h3>Total Balance
+            <br>
+            <span>{{balance}} <small>{{currency}}</small></span>
+            </h3>
+            <p *ngIf="isPaernt" (click)="openCard()" style="cursor:pointer" class=" d-flex justify-content-between align-items-center">Add Money <span class=" px-4"><i class="plus fa-solid fa-plus"></i></span></p>
+            </div>
+            <div class="analysis">
+                            <ul class="list-unstyled d-flex justify-content-between px-5">
+                                <li>
+                                    <div class="box">
+                                        
+                                       <p class="first"> <span class="text" style="font-family: 'Inter';
+                                        font-style: normal;
+                                        font-weight: 600;
+                                        font-size: 10px;
+                                        line-height: 12px;
+                                        font-size: 15px;
+                                        color: #9EA3A5;
+                                        ">last</span></p>
+                                       <p style="
+                                       margin-left: -17px;
+                                       font-family: 'Inter';
+                                       font-style: normal;
+                                       font-weight: 600;
+                                       font-size: 25px;
+                                       line-height: 19px;
+                                       color: #000000;
+                                       ">30days</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        
+                                       <p class="second position-relative"> <span class="text" style="font-family: 'Inter';
+                                        font-style: normal;
+                                        font-weight: 600;
+                                        font-size: 10px;
+                                        line-height: 12px;
+                                        font-size: 15px;
+                                        color: #9EA3A5;
+                                        ">Transactions</span></p>
+                                       <p style="
+                                       margin-left: -17px;
+                                       font-family: 'Inter';
+                                       font-style: normal;
+                                       font-weight: 600;
+                                       font-size: 25px;
+                                       line-height: 19px;
+                                       color: #000000;
+                                       ">95</p>
+                                    </div>
+                                </li>
+                                <li>
+                                   
+                                    <div class="box">
+                                        
+                                       <p class="third position-relative"> <span class="text" style="font-family: 'Inter';
+                                        font-style: normal;
+                                        font-weight: 600;
+                                        font-size: 10px;
+                                        line-height: 12px;
+                                        font-size: 15px;
+                                        color: #9EA3A5;
+                                        ">Income</span></p>
+                                       <p style="
+                                       margin-left: -17px;
+                                       font-family: 'Inter';
+                                       font-style: normal;
+                                       font-weight: 600;
+                                       font-size: 25px;
+                                       line-height: 19px;
+                                       color: #000000;
+                                       ">2059.07 <small style="font-family: 'Inter';
+                                        font-style: normal;
+                                        font-weight: 300;
+                                        font-size: 10px;
+                                        line-height: 12px;">EGP</small></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        
+                                       <p class="fourth position-relative"> <span class="text" style="font-family: 'Inter';
+                                        font-style: normal;
+                                        font-weight: 600;
+                                        font-size: 10px;
+                                        line-height: 12px;
+                                        font-size: 15px;
+                                        color: #9EA3A5;
+                                        ">Spent</span></p>
+                                       <p style="
+                                       margin-left: -17px;
+                                       font-family: 'Inter';
+                                       font-style: normal;
+                                       font-weight: 600;
+                                       font-size: 25px;
+                                       line-height: 19px;
+                                       color: #000000;
+                                       ">789.07<small style="font-family: 'Inter';
+                                        font-style: normal;
+                                        font-weight: 300;
+                                        font-size: 10px;
+                                        line-height: 12px;">EGP</small></p>
+                                    </div>
+                                </li>
+                            </ul>
+            </div>
+            </div>
+            </div> 
+                
+            </div>
+            <!--user's chidrens -->
+            <div  class="col-md-4 bg-white childes p-0 m-0">
+                    <div class="chield-box  w-100">
+                    <div  class="chield-box-heading w-100 d-flex justify-content-between">
+                            <p *ngIf="isPaernt" class="chield-heading">The total number of children</p>
+                            <p *ngIf="isPaernt" class="chiled-number">2</p>
+                            <h2 *ngIf="isChiedl">Your Parent</h2>
+                    </div>
+                    <div (click)="switchChield()" class="chield-details w-100 d-flex justify-content-between mb-2">
+                            <div class="left-side d-flex align-items-center">
+                                <img [src]="imgSrc" alt="">
+                                <div class="chieldbox-heading">
+                                    <h4>Ahmed</h4>
+                                    <div *ngIf="isPaernt" class="lower-detils d-flex justify-content-between ">
+                                        <p style="padding-right: 59px;
+                                        font-family: 'Inter';
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 20px;
+                                        line-height: 24px;
+                                        
+                                        color: #000000;">CuurentPalance</p>
+                                        <p style="
+                                        font-family: 'Poppins';
+                                        font-style: normal;
+                                        font-weight: 800;
+                                        font-size: 14px;
+                                        line-height: 21px;
+                                        /* identical to box height */
+                                        
+                                        letter-spacing: 0.02em;
+                                        
+                                        color: #000000;">200.00 EGP</p>
+                                    </div>
+                                    <div *ngIf="isChiedl" class="lower-detils d-flex justify-content-between ">
+                                        <p style="padding-right: 59px;
+                                        font-family: 'Inter';
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 20px;
+                                        line-height: 24px;
+                                        
+                                        color: #000000;">Age</p>
+                                        <p style="
+                                        font-family: 'Poppins';
+                                        font-style: normal;
+                                        font-weight: 800;
+                                        font-size: 14px;
+                                        line-height: 21px;
+                                        /* identical to box height */
+                                        
+                                        letter-spacing: 0.02em;
+                                        
+                                        color: #000000;">40Year</p>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                    </div>
+                    <!-- chield wallets details -->
+                    <div *ngIf="isPaernt"(click)="switchChield()" class="chield-details w-100 d-flex justify-content-between mb-2">
+                        <div class="left-side d-flex align-items-center">
+                            <img src="../../assets/img/Rectangle.png" alt="">
+                            <div class="chieldbox-heading">
+                                <h4>Ahmed</h4>
+                                <div class="lower-detils d-flex justify-content-between ">
+                                    <p style="padding-right: 59px;
+                                    font-family: 'Inter';
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 20px;
+                                    line-height: 24px;
+                                    
+                                    color: #000000;">CuurentPalance</p>
+                                    <p style="
+                                    font-family: 'Poppins';
+                                    font-style: normal;
+                                    font-weight: 800;
+                                    font-size: 14px;
+                                    line-height: 21px;
+                                    /* identical to box height */
+                                    
+                                    letter-spacing: 0.02em;
+                                    
+                                    color: #000000;">200.00 EGP</p>
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <!-- add new chield to parent -->
+                    </div>
+                    <div class="add-chield w-100 text-center">
+                        <button class="button" (click)="addChield()">
+                            <div class="button-overlay"></div>
+                            <span>Add New Child <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 53 58" height="58" width="53">
+                          <path stroke-width="9" stroke="currentColor" d="M44.25 36.3612L17.25 51.9497C11.5833 55.2213 4.5 51.1318 4.50001 44.5885L4.50001 13.4115C4.50001 6.86824 11.5833 2.77868 17.25 6.05033L44.25 21.6388C49.9167 24.9104 49.9167 33.0896 44.25 36.3612Z"></path>
+                          </svg></span>
+                            
+                          </button>
+                    </div>
+                    </div>
+            </div>
+            <div class="col-md-7">
+                <div class="services">
+                    <router-outlet></router-outlet>
+                    </div>
+            </div>  
+            <div class="col-md-4 chiled-analysis bg-white ">
+                <!-- heading -->
+            <div class="chiled-expencessbox py-2">
+                    <h3>All Children Expenses</h3>
+            </div>
+            <!-- first-sections(describe transactions avarage) -->
+            <div class="period-analysis">
+                <ul class="list-unstyled d-flex justify-content-between align-items-center">
+                    <li class=" px-2">
+                        <p>
+                            Daily 
+                        </p>
+                        <span>
+                            259.07 <small>EGP</small>
+                        </span>
+                    </li>
+                    <li class=" px-2">
+                        <p>
+                            weekly  
+                        </p>
+                        <span>
+                            4059.07<small>EGP</small>
+                        </span>
+                    </li>
+                    <li class=" px-2">
+                        <p>
+                            Monthly  
+                        </p>
+                        <span>
+                            9029.07 <small>EGP</small>
+                        </span>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- shart analysis for payments(spending money) -->
+            <div class="analusis-circule w-100 py-3 d-flex justify-content-center align-items-center">
+                    <div class="circul">
+                        <span  class="first-circule  ">
+                            <span class="second-circule  ">
+                                <span class="third-circule "></span>
+                            </span>
+                        </span>
+                        <h3 class="circuls-caption pt-5 ps-3">
+                            Shopping
+                        </h3>
+                        <span class=" ps-3  py-3 circuls-discrib ">7259.07 <small>EGP</small></span>
+                        
+                        
+                    </div>
+                    
+            </div>
+            <!-- more-details -->
+            <div class="details pb-0 ">
+                <ul class="list-unstyled w-100">
+                    <li class=" d-flex justify-content-between p-0 m-0">
+                        <div class="left"><span></span> <p>Entertainments</p></div>
+                        <p class="percent">32%</p>
+                    </li>
+                    <li class=" d-flex justify-content-between p-0 m-0">
+                        <div class="left"><span class="second-details" style="background-color: #FFB37C;"></span> <p>Workspace</p></div>
+                        <p class="percent">43%</p>
+                    </li>
+                    <li class=" d-flex justify-content-between p-0 m-0">
+                        <div class="left"><span style="background-color: #5872E2;"></span> <p>Platform</p></div>
+                        <p class="percent">50%</p>
+                    </li>
+                    <li class=" d-flex justify-content-between p-0 m-0">
+                        <div class="left"><span style="background-color: #15728B;"></span> <p>Shoppingp</div>
+                        <p class="percent">64%</p>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            </div>
+            </div>
+        </div>
+        <!-- make-chield wallet -->
+        <div *ngIf="openForm" class="add-newChield position-fixed top-0 start-0 end-0 bottom-0 fixed-top ">
+        <div class="container   form-container position-relative ">
+        <div class="heading w-100 text-center ">
+        <h2>Add new chield</h2>
+        <img src="../../assets/img/Add files-pana 1.png" alt="">
+        </div>
+        <!-- chield register-form -->
+        <form [formGroup]="registerForm" action=""> 
+            <p *ngIf="chieldErr" class="alert alert-danger">{{chieldMessage|json}}</p>
+            <label for="chiledName pb-2 pt-2">chiledName</label>
+            
+            <input type="text" id="chiledName" class="form-control " formControlName="name" placeholder="Mohamed Gamal Hamed">
+            <div *ngIf="registerForm.get('name')?.errors&&registerForm.get('name')?.touched">
+                <p *ngIf="registerForm.get('name')?.getError('required')" class="alert alert-danger" > name is requierd</p>
+                <p *ngIf="registerForm.get('name')?.getError('maxlength')" class="alert alert-danger" > name can not be more than25</p>
+                <p *ngIf="registerForm.get('name')?.getError('minlength')" class="alert alert-danger" > name can not be less than6</p>
+            </div>
+           <!-- email -->
+            <label for="email">E-mail</label>
+            <input type="email" id="email" class="form-control mb-2" formControlName="email">
+            <!-- email errors ALERTS -->
+                <div *ngIf="registerForm.get('email')?.errors&&registerForm.get('email')?.touched">
+                 <p *ngIf="registerForm.get('email')?.getError('required')" class="alert alert-danger" > email is requierd</p>
+                 <p *ngIf="registerForm.get('email')?.getError('email')" class="alert alert-danger" >Please Enter valid E-mail</p>
+                </div>
+            <label for="mobieNumber">mobieNumber</label>
+            <input type="text" id="mobieNumber" class="form-control " formControlName="phone" placeholder="phone number should start with 012">
+            <div *ngIf="registerForm.get('phone')?.errors&&registerForm.get('phone')?.touched">
+                <p *ngIf="registerForm.get('phone')?.getError('required')" class="alert alert-danger" > phoneNumber is requierd</p>
+                <p *ngIf="registerForm.get('phone')?.getError('pattern')" class="alert alert-danger" >please enter valid mobile number</p>
+            </div>
+            <!-- national id -->
+             <label for="ssid">National Id</label>
+            <input type="text" id="ssid" class="form-control " formControlName="ssid" placeholder="Enter tour chield limit">
+            <div *ngIf="registerForm.get('ssid')?.errors&&registerForm.get('ssid')?.touched">
+            <p *ngIf="registerForm.get('ssid')?.getError('required')" class="alert alert-danger" > nationalID is requierd</p>
+            <p *ngIf="registerForm.get('ssid')?.getError('pattern')" class="alert alert-danger" > nationalID should be 14number</p>
+            </div>
+              
+            <!-- password -->
+            <label for="password">password</label>
+            <!-- password alerts -->
+            <input type="password" id="password" class="form-control mb-2" formControlName="password" placeholder="phone number should start with 012">
+            <div *ngIf="registerForm.get('password')?.errors&&registerForm.get('password')?.touched">
+            <p *ngIf="registerForm.get('password')?.getError('required')" class="alert alert-danger" > Password is requierd</p>
+            <p *ngIf="registerForm.get('password')?.getError('pattern')" class="alert alert-danger" > Password should be contain numbers and chracters and special char(@#$%)</p>
+            </div>
+            
+            
+            <!-- confirm proccess  -->
+            <div class="submit w-100 d-flex justify-content-center">
+            <button *ngIf="!isLoading"  (click)="sendChieldFormData()" class=" btn btn-primary py-2 px-5 mt-2 w-75">Submit</button>
+            <span *ngIf="isLoading" class=""><i class="fas fa-spinner fa-spin"></i></span>
+
+            </div>
+            </form>
+            <!-- close form screen -->
+            <span (click)="closeForm()" class="position-absolute close-btn"><i class="fa-solid fa-circle-xmark"></i></span>
+            </div>
+            </div>
+        <!-- displayChieldDataForPrent -->
+        <div *ngIf="openChieldeForm" class="displayChield position-fixed top-0 start-0 end-0 bottom-0 fixed-top  ">
+            <div class="chield-data-container w-75 m-auto mt-2">
+                <div class="row d-flex gx-5 position-relative">
+                        <!-- chield-transactions and palance -->
+                        <div (click)="close()" class="close position-relative">
+                         <i   class="close-btn position-absolute  fa-solid fa-circle-xmark"></i>
+                        </div>
+                        <div class="col-md-6">
+                        <div class="transactions-history">
+                            <div class="heading pt-3 ps-3 d-flex">
+                            <h2>Last transaction</h2>
+                            <p style="align-self: center;
+                            font-size: 20px;
+                            font-weight: 500;
+                            transform: translate(17px, 22px);
+                        ">Palanace:100</p>
+                            </div>
+                            <!-- transations dash-board -->
+                            <div class="history w-100 py-3 mt-2">
+                            <div class="history-filters">
+                                <!-- transactions -->
+                                <ul class="list-unstyled   w-100">
+                                    <li class=" d-flex justify-content-between align-items-center w-100 py-2 mb-2  proccess-details">
+                                        <div class="user-data d-flex">
+                                        <span class=" px-1">Mar 22</span> <img src="../../assets/img/Rectangle.png" alt=""> <p class=" px-2">Ahmed mohamed</p>
+                                        </div>
+                    
+                                        <p class="purbose">Education</p>
+                                        <!-- proccess state -->
+                                        <div class="status d-flex ">
+                                            <span  class="success"></span>
+                                            
+                                            <p>Succeed</p>
+                                        </div>
+                    
+                                        <p class="amount">$ 10.00</p>
+                                    </li>
+                                    <li class=" d-flex justify-content-between align-items-center w-100 py-2 mb-2  proccess-details">
+                                        <div class="user-data d-flex">
+                                        <span class=" px-1">Mar 22</span> <img src="../../assets/img/Rectangle.png" alt=""> <p class=" px-2">Ahmed mohamed</p>
+                                        </div>
+                    
+                                        <p class="purbose">Education</p>
+                                        <!-- proccess state -->
+                                        <div class="status d-flex ">
+                                           
+                                            <span class="faield"></span>
+                                            <p>Succeed</p>
+                                        </div>
+                    
+                                        <p class="amount">$ 10.00</p>
+                                    </li>
+                                    <li class=" d-flex justify-content-between align-items-center w-100 py-2 mb-2  proccess-details">
+                                        <div class="user-data d-flex">
+                                        <span class=" px-1">Mar 22</span> <img src="../../assets/img/Rectangle.png" alt=""> <p class=" px-2">Ahmed mohamed</p>
+                                        </div>
+                    
+                                        <p class="purbose">Education</p>
+                                        <!-- proccess state -->
+                                        <div class="status d-flex ">
+                                            
+                                            <span  class="pending"></span>
+                                           
+                                            <p>Succeed</p>
+                                        </div>
+                    
+                                        <p class="amount">$ 10.00</p>
+                                    </li>
+                                    <li class=" d-flex justify-content-between align-items-center w-100 py-2 mb-2  proccess-details">
+                                        <div class="user-data d-flex">
+                                        <span class=" px-1">Mar 22</span> <img src="../../assets/img/Rectangle.png" alt=""> <p class=" px-2">Ahmed mohamed</p>
+                                        </div>
+                    
+                                        <p class="purbose">Education</p>
+                                        <!-- proccess state -->
+                                        <div class="status d-flex ">
+                                            <span  class="success"></span>
+                                            
+                                            <p>Succeed</p>
+                                        </div>
+                    
+                                        <p class="amount">$ 10.00</p>
+                                    </li>
+                                    <li class=" d-flex justify-content-between align-items-center w-100 py-2 mb-2  proccess-details">
+                                        <div class="user-data d-flex">
+                                        <span class=" px-1">Mar 22</span> <img src="../../assets/img/Rectangle.png" alt=""> <p class=" px-2">Ahmed mohamed</p>
+                                        </div>
+                    
+                                        <p class="purbose">Education</p>
+                                        <!-- proccess state -->
+                                        <div class="status d-flex ">
+                                            <span  class="success"></span>
+                                            <p>Succeed</p>
+                                        </div>
+                    
+                                        <p class="amount">$ 10.00</p>
+                                    </li>
+                                    <li class=" d-flex justify-content-between align-items-center w-100 py-2 mb-2  proccess-details">
+                                        <div class="user-data d-flex">
+                                        <span class=" px-1">Mar 22</span> <img src="../../assets/img/Rectangle.png" alt=""> <p class=" px-2">Ahmed mohamed</p>
+                                        </div>
+                    
+                                        <p class="purbose">Education</p>
+                                        <!-- proccess state -->
+                                        <div class="status d-flex ">
+                                            <span  class="success"></span>
+                                            <p>Succeed</p>
+                                        </div>
+                    
+                                        <p class="amount">$ 10.00</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- cield-personal-data -->
+                        <div class="col-md-6">
+                        <div class="data-box ps-3 text-center position-relative">
+                            <div class="data-img-box d-flex justify-content-center">
+                            <img src="../../assets/img/userAvatar.png" class="child-avatar  " alt="">
+                            </div>
+                            <p class=" last-login pt-2">Last log in : 25 Oct 2023 ,2.30 AM </p>
+                            <ul class="actions list-unstyled">
+                                <li class="action d-flex align-items-center justify-content-center w-50 m-auto mb-5">
+                                <p class="left-text">Moaz</p>
+                                </li>
+                                <li class="action d-flex align-items-center justify-content-center w-50 m-auto mb-5"> <p class="left-text">015784963</p></li>
+                                <li class="action d-flex align-items-center justify-content-center w-50 m-auto mb-5"><p class="left-text">5/6/2003</p></li>
+                                <li class="action d-flex align-items-center justify-content-center w-50 m-auto mb-5"><p class="left-text">015784963</p></li></ul>
+                        </div>
+                        </div>
+                  
+                </div>
+            </div>
+        </div>
+        <!-- display charge form -->
+        <div *ngIf="walletState" class="visa-card position-fixed top-0 start-0 end-0 bottom-0 fixed-top ">
+            <div class="container   form-container position-relative ">
+            <div class="heading w-100 text-center ">
+            
+            <img  class="p-3 pb-4"src="../../assets/img/image 2.png" alt="">
+
+            <p *ngIf="err" class="alert card-alert alert-danger">{{errMessage|json}}</p>
+            </div>
+            <!-- chield register-form -->
+            <form [formGroup]="monyForm" class="pt-2" action=""> 
+                <label for="cardnumber">CardNumber</label>
+                <input type="text" id="cardnumber" class="form-control " formControlName="number" >
+                <div *ngIf="monyForm.get('number')?.errors&&monyForm.get('number')?.touched">
+                    <p *ngIf="monyForm.get('number')?.getError('required')" class="alert alert-danger" >card number is requierd</p>
+                    <p *ngIf="monyForm.get('number')?.getError('pattern')" class="alert alert-danger" > card number should be16number</p>
+                </div>
+               
+                <label for="name">CardName</label>
+                <input type="text" id="name" class="form-control mb-2" formControlName="name">
+                <!-- name errors ALERTS -->
+                    <div *ngIf="monyForm.get('name')?.errors&&monyForm.get('name')?.touched">
+                     <p *ngIf="monyForm.get('name')?.getError('required')" class="alert alert-danger" > name is requierd</p>
+                    </div>
+
+                <label for="mobieNumber">CvV</label>
+                <input type="text" id="mobieNumber" class="form-control " formControlName="cvv" >
+                <div *ngIf="monyForm.get('cvv')?.errors&&monyForm.get('cvv')?.touched">
+                    <p *ngIf="monyForm.get('cvv')?.getError('required')" class="alert alert-danger" > cvvNumber is requierd</p>
+                    <p *ngIf="monyForm.get('cvv')?.getError('pattern')" class="alert alert-danger" >cvv should be 3Numbers</p>
+                </div>
+                
+                 <label for="amount">amount</label>
+                <input type="text" id="amount" class="form-control " formControlName="amount" >
+                <div *ngIf="monyForm.get('amount')?.errors&&monyForm.get('amount')?.touched">
+                    <p *ngIf="monyForm.get('amount')?.getError('required')" class="alert alert-danger" > Amount is requierd</p>
+                   </div>
+                  
+                
+                <label for="expiryDateString">expired Date</label>
+                <input type="datetime" id="expiryDateString" class="form-control mb-2" formControlName="expiryDateString" placeholder="date should be like 00/22" >
+                <div *ngIf="monyForm.get('expiryDateString')?.errors&&monyForm.get('expiryDateString')?.touched">
+                    <p *ngIf="monyForm.get('expiryDateString')?.getError('required')" class="alert alert-danger" > expiryDateString is requierd</p>
+                    <p *ngIf="monyForm.get('expiryDateString')?.getError('pattern')" class="alert alert-danger" > expiryDateString should be contain numbers and chracters and special char(@#$%)</p>
+                   </div>
+                
+               
+    
+                <div class="submit w-100 d-flex justify-content-center">
+                    <button  *ngIf="!isLoading"[disabled]="monyForm.invalid" (click)="  charge()" class=" btn btn-primary py-2 px-5 mt-2 w-75">Submit</button>
+                    <span *ngIf="isLoading" class=""><i class="fas fa-spinner fa-spin"></i></span>
+
+                </div>
+            </form>
+            <span (click)="closeCard()" class="position-absolute close-btn"><i class="fa-solid fa-circle-xmark"></i></span>
+            </div>
+            </div>
+</div>

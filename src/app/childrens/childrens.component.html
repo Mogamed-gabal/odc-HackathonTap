@@ -1,0 +1,57 @@
+<div class="payment-form w-100">
+    <h2 class=" py-2 mb-3">Wallet Transfer to your children</h2>
+    <form action="" [formGroup]="transactionForm">
+       
+
+        <label for="amount">Mony</label>
+        <input type="number" id="amount" class="form-control mb-4" formControlName="amount" placeholder="from 100 to10000">
+        <!-- allets div -->
+        <div *ngIf=" transactionForm.get('amount')?.errors&&transactionForm.get('amount')?.touched">
+        <p *ngIf="transactionForm.get('amount')?.getError('required')" class=" alert alert-danger pt-1">
+        please enter the palance you want to transfare
+        </p>
+        <p *ngIf="transactionForm.get('amount')?.getError('pattern')" class=" alert alert-danger pt-1">
+        the daily limit to transfare mony is10000
+        </p>
+        </div>
+        
+        
+        <label for="Wallet number">Your wallet number</label>
+        <input type="text" id="Wallet number" class="form-control mb-4" formControlName="sender" placeholder="entre your wallet numeber just like 012222">
+        <!-- sender errors ALERTS -->
+        <div *ngIf="transactionForm.get('sender')?.errors&&transactionForm.get('sender')?.touched">
+            <p *ngIf="transactionForm.get('sender')?.getError('required')" class="alert alert-danger" > sender Number is requierd</p>
+            <p *ngIf="transactionForm.get('sender')?.getError('pattern')" class="alert alert-danger" > Please Enter Valid wallet Number</p>
+            </div>
+        
+        <label for="reciverNumber">ChieldNumber</label>
+        <input type="text" id="Mobile number" class="form-control mb-4" formControlName="receiver" placeholder="entre your wallet numeber just like 012222">
+        <!-- reciver errors -->
+        <div *ngIf="transactionForm.get('receiver')?.errors&&transactionForm.get('receiver')?.touched" >
+            <p *ngIf="transactionForm.get('receiver')?.getError('required')" class="alert alert-danger" > receiver Number is requierd</p>
+            <p *ngIf="transactionForm.get('receiver')?.getError('pattern')" class="alert alert-danger" > Please Enter Valid wallet Number</p>
+            </div>
+
+        <label for="extraDetails">Note</label>
+        <input type="text" id="Mobile number" class="form-control mb-4" placeholder="please give us the reaso to transaction">
+       
+       
+        <a (click)="openConfirmationMessage()" class="w-75 btn btn-primary px-4 py-2">Submit</a>
+    </form>
+        <!-- confirm procces -->
+    <div *ngIf="closeForm" class="add-newPayment position-fixed top-0 start-0 end-0 bottom-0 fixed-top ">
+        <div class="container w-50  form-container position-relative ">
+        <div class="heading w-100 text-center ">
+        <img class="w-50" src="../../assets/img/Questions-cuate 1.png" alt="">
+        <h2>Are you sure that you want to send 250.00 EGP to your child Omar
+        </h2>
+        </div>
+        
+        <div class="buttons w-100 text-center">
+        <button class=" btn btn-primary w-75 px-2 py5 mb-3">Submit</button>
+        <button (click)="CloseConfirmationMessage()" class=" btn btn-secondary w-50 px-2 py1">Cancel</button>
+        </div>
+        <span  class="position-absolute close-btn"><i class="fa-solid fa-circle-xmark"></i></span>
+        </div>
+</div>
+</div>

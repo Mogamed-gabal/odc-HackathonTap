@@ -1,0 +1,111 @@
+<div class="generate-card bg-white position-relative">
+<div class="card-bnt w-100 d-flex  p-3 position-relative ">
+<button (click)="open()" class="btn btn-primary generate"><i  class="fa-solid fa-plus"></i></button>
+</div>
+<button (click)="openRefundForm()" class="btn refund-btn">Refund</button>
+<div class="visa">
+<img src="../../assets/img/image 2.png" alt="">
+</div>
+<!-- open card-generationForm -->
+<div *ngIf="openForm" class="cardGeneration position-fixed top-0 start-0 end-0 bottom-0 fixed-top ">
+    <div class="container w-50  form-container position-relative ">
+    <div class="heading w-100 text-center ">
+        <P class="alert alert-danger" *ngIf="err" >{{errMessage |json}}</P>
+    <img src="../../assets/img/image 2.png" class=" py-5" alt="">
+    </div>
+    <!-- chield register-form -->
+    <form [formGroup]="visaForm" action=""> 
+        <label for="CardType">CardType</label>
+        <input  type="text" id="chiledName" class="form-control mb-4" formControlName="name" placeholder="MasterCard or visa">
+        
+        <label for="amount">amount</label>
+        <input type="number" id="password" class="form-control mb-4" formControlName="amount" placeholder="amout of mony you want to transfare">
+        
+        
+       
+
+        <div class="submit w-100 d-flex justify-content-center">
+            <button *ngIf="!isLoading" [disabled]="visaForm.invalid" (click)="sendData()" class=" btn btn-primary py-2 px-5 mt-2 w-75">Submit</button>
+           
+            <span *ngIf="isLoading" class=""><i class="fas fa-spinner fa-spin"></i></span>
+        </div>
+    </form>
+    <span  (click)="close()"  class="position-absolute close-btn"><i class="fa-solid fa-circle-xmark"></i></span>
+    </div>
+</div>
+<div *ngIf="openRefund" class="cardGeneration position-fixed top-0 start-0 end-0 bottom-0 fixed-top ">
+    <div class="container w-50  form-container position-relative ">
+    <div class="heading w-100 text-center ">
+        <P class="alert alert-danger" *ngIf="err" >{{errMessage |json}}</P>
+    <img src="../../assets/img/image 2.png" class=" py-5" alt="">
+    </div>
+    <!-- chield register-form -->
+    <form [formGroup]="refundForm" action=""> 
+        
+        
+        <label for="CardNumber">CardNumber</label>
+        <input type="text" id="CardNumber" class="form-control mb-4" formControlName="number" placeholder="put your card numer to return your mony">
+        <div *ngIf=" refundForm.get('password')?.errors&&refundForm.get('number')?.touched">
+            <p *ngIf="refundForm.get('number')?.getError('required')" class=" alert alert-danger pt-1">
+                number is requierd
+            </p>
+            <p *ngIf="refundForm.get('number')?.getError('pattern')" class=" alert alert-danger pt-1">
+                card numer should be 16number
+            </p>
+            
+
+        </div>
+
+
+        
+       
+
+        <div class="submit w-100 d-flex justify-content-center">
+            <button *ngIf="!isLoading" [disabled]="refundForm.invalid" (click)="sendData()" class=" btn btn-primary py-2 px-5 mt-2 w-75">Submit</button>
+            <span *ngIf="isLoading" class=""><i class="fas fa-spinner fa-spin"></i></span>
+           <button class=" btn btn"></button>
+        </div>
+    </form>
+    <span  (click)="closeRefundForm()"  class="position-absolute close-btn"><i class="fa-solid fa-circle-xmark"></i></span>
+    </div>
+</div>
+<!-- visa card details -->
+<div *ngIf="openCard" class="cardData position-fixed top-0 start-0 end-0 bottom-0 fixed-top ">
+    <div class="container w-50  form-container position-relative ">
+    <div class="heading w-100 text-center ">
+    <img src="../../assets/img/image 2.png" class=" py-5" alt="">
+    </div>
+    <!-- alert -->
+    <p class="alert alert-danger my-2">pleace notice this,this card is valid for 1 minute,if you dont spend your mony ,click refund</p> 
+    <!-- chield register-form -->
+   
+
+
+
+
+   <ul class=" list-unstyled pb-4 card-detail">
+        <li class=" border-bottom mb-3">
+            balance: <span>{{carDetails.balance}}</span>
+        </li>
+        <li class=" border-bottom mb-3">
+            cardNumber:<span>{{carDetails.number}}</span>
+        </li>
+        <li class=" border-bottom mb-3">
+            Cvv:<span>{{carDetails.cvv}}</span>
+        </li>
+        <li class=" border-bottom mb-3">
+           expireDate:<span>{{carDetails.expiryDateString}}</span>
+        </li>
+        <li class=" border-bottom mb-3">
+            
+            CardStatus:<span>{{carDetails.status}}</span>
+        </li>
+    
+        
+    </ul>
+    <span  (click)="colseVisaCard()"  class="position-absolute close-btn"><i class="fa-solid fa-circle-xmark"></i></span>
+    </div> 
+</div>
+
+
+</div>  

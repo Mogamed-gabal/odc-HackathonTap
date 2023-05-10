@@ -1,0 +1,92 @@
+.choose
+{
+    background: #FAFAFA;
+    box-shadow: -40px 60px 40px rgba(0, 0, 0, 0.25);
+}
+.logo
+{
+    position: absolute;
+    left: 118px;
+    top: 88px;
+}
+.container
+{
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+.heading
+{
+    padding: 27px; 
+    padding-bottom: 69px;
+    padding-right: 20px;
+
+}
+.heading h2
+{
+ font-family: 'Poppins';
+font-style: normal;
+font-weight: 900;
+font-size: 64px;
+line-height: 96px;
+letter-spacing: 0.01em;
+color: #000000;
+}
+.parent
+{
+    cursor: pointer;
+}
+.chield
+{
+    cursor: pointer;
+}
+.img-box .caption
+{
+padding-top: 7px;
+}
+.img-box img
+{
+    border-radius: 17px;
+}
+p
+{
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 40px;
+line-height: 60px;
+letter-spacing: 0.02em;
+color: #000000;
+}
+/*mediaQueiry */
+@media screen and (min-width:0px) and (max-width:599px)
+
+{
+    .logo
+    {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 7px;
+    }
+    .heading h2
+    {
+        font-size: 38px;
+    }
+
+}
+@media screen and (min-width:600px)
+
+{
+    .logo
+    {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 7px;
+    }
+    .heading h2
+    {
+        font-size: 38px;
+    }
+    
+}

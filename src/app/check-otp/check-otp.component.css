@@ -1,0 +1,107 @@
+.login
+{
+    background-color: #FAFAFA;
+}
+/* start left side page */
+/* start left side texting */
+.left-side
+{
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+}
+.login-heading
+{
+    position: relative;
+}
+.login-heading h2
+{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: 0.02em;
+    color: #000000;
+}
+.login-heading p
+{
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 19px;
+    line-height: 36px;
+    letter-spacing: 0.02em;
+    color: #9E9D9D;
+    
+}
+/* logo proberits */
+.login-heading .logo
+{
+    position: absolute;
+    left: 115%;
+    top: -3px;
+}
+/* end left side heading and text */
+/* start left side form  */
+label
+{    
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 36px;
+letter-spacing: 0.02em;
+color: #000000;
+}
+input
+{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+.forget
+{
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 30px;
+letter-spacing: 0.02em;
+color: #4285F4;
+}
+/* form btn */
+button
+{
+    border-radius: 24px;
+    font-size: 18px;
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+
+}
+/* right-side img */
+.right-side
+{
+    margin-right: -12px;
+    
+}
+.bb  .bb-item{
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    text-align: center;
+    border: 2px solid #b81b1b;
+    border-radius: 0.25rem;
+    background-color: #e68d11;
+
+  }
+  
+  .bb.bb-item:focus {
+    outline: none;
+    border-color: green;
+    box-shadow: 0 0 0 2px rgba(0, 255, 0, 0.25);
+  }

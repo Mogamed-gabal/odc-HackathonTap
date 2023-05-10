@@ -1,0 +1,104 @@
+.transactions-history
+{
+    width: 100%;
+    padding-right: 200px;
+}
+/* user-data */
+.proccess-details
+{
+    position: relative;
+    transform: translateX(33px);
+}
+.proccess-details::before
+{
+    content: '';
+    position: absolute;
+    width: 130%;
+    height: 1px;
+    background: #0000003b;
+    top: 70px;
+    left: 4px;
+}
+.user-data
+{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 11px;
+line-height: 13px;
+color: #000000;
+}
+.user-data span
+{
+    transform: translate(-1px, 19px);
+}
+.user-data p
+{
+    transform: translate(6px, 15px);
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 17px;
+line-height: 18px;
+color: #000000;
+}
+.purbose
+{
+transform: translate(19px, 4px);
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 13px;
+color: #9EA3A5;
+}
+
+.status
+{
+    transform: translate(45px, 3px);
+}
+.status p
+{
+ position: relative;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 13px;
+color: #000000;
+}
+.status .success{
+    width: 7px;
+    height: 7px;
+    transform: translate(-2px, 5px);
+    background: #10C583;
+    border-radius: 50%;
+}
+.status .pending{
+    width: 7px;
+    height: 7px;
+    transform: translate(-2px, 5px);
+    background: #FFCA7B;
+    border-radius: 50%;
+}
+.status .faield{
+    width: 7px;
+    height: 7px;
+    transform: translate(-2px, 5px);
+    background: #EA8587;
+    border-radius: 50%;
+}
+
+.amount
+{
+transform: translate(105px, 6px);
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 900;
+font-size: 13px;
+line-height: 20px;
+letter-spacing: 0.01em;
+color: #10C583;
+
+}
+/* user-data right-side */

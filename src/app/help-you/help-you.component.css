@@ -1,0 +1,143 @@
+.generate-card 
+{
+    padding-right: 250px;
+    height: 75vh;
+    width: 100%;
+}
+.generate-card .generate
+{
+    border-radius: 27px;
+    transform: translate(533px, -3px);
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+}
+/* card */
+.visa
+{
+    display: flex;
+    justify-content: space-between;
+    transform: translate(118px, 70px);
+}
+/* add card */
+.add-newChield
+{
+    background-color:#ffffff99
+}
+.form-container
+{
+background-color: white;
+padding: 46px;
+padding-bottom: 0;
+margin-top: 15px;
+border-radius: 18px;
+padding-top: 105px;
+}
+.form-container h2
+{
+    margin-top: 0;
+}
+
+.form-container img
+{
+    width: 165px;
+    transform: translate(0, -56px);
+}
+.form-container form
+{
+    transform: translate(0, -95px);
+}
+.form-container label
+{
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 36px;
+letter-spacing: 0.02em;
+color: #000000;
+}
+.form-container input
+{
+background: #EAEAEA;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+::placeholder
+{
+    color: rgba(0, 0, 0, 0.437);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.submit .btn
+{
+    border-radius: 7px;
+}
+.close-btn
+{
+    top: 3px;
+    right: 11px;
+    font-size: 25px;
+    color: rgba(1, 60, 120, 0.42);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.close-btn:hover
+{
+    transform: scale(1.05);
+    color: rgba(1, 60, 120, 0.71);;
+}
+/* card dataShow */
+.cardData
+{
+    background-color:#ffffff99
+}
+.cardData .form-container
+{
+background-color: white;
+padding: 46px;
+padding-bottom: 0;
+margin-top: 15px;
+border-radius: 18px;
+padding-top: 40px;
+}
+.card-detail li
+{
+    font-weight: 500;
+    font-family: cursive;
+}
+.card-detail li span
+{
+    font-weight: 300;
+    font-family: cursive;
+}
+.refund-btn
+{
+    transform: translate(20px,-62px);
+    background: #0d6efd;
+    color: white;
+    font-size: 20px;
+}
+/* mediaquery */
+
+
+
+@media screen and (max-width:768px) {
+    
+    .generate
+{
+    
+    transform: translate(356px, -3px);
+}
+.visa
+{
+    transform: translate(11px, -3px);
+}
+}
+@media screen and (max-width:992px) {
+    
+    .generate-card{
+        width: 50vh;
+        padding-right:0px;
+
+    }
+}

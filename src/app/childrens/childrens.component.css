@@ -1,0 +1,104 @@
+.payment-form
+{
+    background-color: white;
+    width: 100%;
+    border-radius: 29px;
+    padding: 15px;
+    padding-right: 165px;
+    padding-bottom: 50px;
+}
+.payment-form h2
+{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 39px;
+color: #000000;
+}
+label
+{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+color: #000000;
+}
+/* success message page */
+.add-newPayment
+{
+    background-color:#ffffff99
+}
+.form-container
+{
+    width: 50%;
+background-color: #b3b3b3;
+padding: 46px;
+
+margin-top: 15px;
+border-radius: 18px;
+padding-bottom: 50px;
+}
+.form-container h2
+{
+    margin-top: 0;
+}
+
+.form-container img
+{
+   
+}
+
+.submit .btn
+{
+    border-radius: 7px;
+}
+.close-btn
+{
+    top: 3px;
+    right: 11px;
+    font-size: 25px;
+    color: red;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.close-btn:hover
+{
+    transform: scale(1.05);
+    color: red;
+}
+/* services-container */
+.services
+{
+    background-color: white;
+    max-width: 75%;
+    position: absolute;
+    top: 188px;
+    left: 20px;
+    border-radius: 10px;
+}
+/*media queiry  */
+@media screen and (max-width:768px) {
+    .payment-form
+    {
+        width: 58vh
+    }
+    .payment-form h2
+    {
+    font-size:19px
+    }
+}
+    
+    
+ @media screen and (max-width:992px) {
+
+       .payment-form
+    {
+        width: 52vh
+    }
+    .payment-form h2
+    {
+    font-size:19px
+    }
+}
