@@ -143,7 +143,7 @@ constructor(private _Router:Router ,private AuthService:AuthService,private Wall
     if(check)
     {
       let decodedToken:any=jwtDecode(check)
-      // this.monyForm.get('phone')?.setValue(decodedToken.phone)
+      this.monyForm.get('phone')?.setValue(decodedToken.phone)
       this.VisaCardService.payeWithVisa(this.monyForm.value).subscribe({
         next:(res)=>{
           if(res.message=="Done")
