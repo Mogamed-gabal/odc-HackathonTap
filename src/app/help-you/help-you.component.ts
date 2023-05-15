@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import jwtDecode from 'jwt-decode';
 import { VisaCardService } from '../visa-card.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-help-you',
@@ -22,7 +23,7 @@ export class HelpYouComponent implements OnInit {
   owner:new FormControl(null)
   })
   
-  constructor(private VisaCardService:VisaCardService){}
+  constructor(private VisaCardService:VisaCardService,private Router:Router){}
   refundForm:FormGroup=new FormGroup({
     number:new FormControl(null,[Validators.required,Validators.pattern('^[0-9]{16}$')])
   })
@@ -68,7 +69,7 @@ sendData()
           this.openCard=true
           console.log(this.carDetails)
           this.isLoading=false
-
+         
         }else
         {
           this.errMessage=res

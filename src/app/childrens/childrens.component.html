@@ -41,14 +41,15 @@
         <!-- confirm procces -->
     <div *ngIf="closeForm" class="add-newPayment position-fixed top-0 start-0 end-0 bottom-0 fixed-top ">
         <div class="container w-50  form-container position-relative ">
+        <p *ngIf="err" class="alert alert-danger">{{errMessage |json}}</p>
         <div class="heading w-100 text-center ">
         <img class="w-50" src="../../assets/img/Questions-cuate 1.png" alt="">
-        <h2>Are you sure that you want to send 250.00 EGP to your child Omar
+        <h2>Are you sure that you want to send {{amount}} EGP to your child whith Number{{chield}}
         </h2>
         </div>
         
         <div class="buttons w-100 text-center">
-        <button class=" btn btn-primary w-75 px-2 py5 mb-3">Submit</button>
+        <button (click)="  sendTransaction()" class=" btn btn-primary w-75 px-2 py5 mb-3">Submit</button>
         <button (click)="CloseConfirmationMessage()" class=" btn btn-secondary w-50 px-2 py1">Cancel</button>
         </div>
         <span  class="position-absolute close-btn"><i class="fa-solid fa-circle-xmark"></i></span>

@@ -43,7 +43,6 @@ export class PaymenMethodsComponent implements OnInit {
   sendTransaction()
   {
     this.isLoading=true
-    
     const sender=this.transactionForm.get('sender')?.value
     
 // check if send mony to himself
@@ -59,17 +58,19 @@ export class PaymenMethodsComponent implements OnInit {
     let decodedToken:any=jwtDecode(encodedToken)
     // const wallet=decodedToken.wallet._id
     // this.transactionForm.get('sender')?.setValue(wallet)
-      this.isLoading=false
+      this.isLoading=true
       this.TransactionsService.makeTransaction(this.transactionForm.value).subscribe({
           next:(res)=>{
             if(res.message=='Done')
             {
+              this.isLoading=false
               console.log(res)
               this.closeForm=false
               this.Router.navigate(['/successproccess'])
             }
             else
             {
+              this.isLoading=false
               this.err=true
               this.errMessage=res
               

@@ -552,19 +552,27 @@
                 <label for="cardnumber">CardNumber</label>
                 <input type="text" id="cardnumber" class="form-control " formControlName="number" >
                 <div *ngIf="monyForm.get('number')?.errors&&monyForm.get('number')?.touched">
-                    <p *ngIf="monyForm.get('number')?.getError('required')" class="alert alert-danger" >card number is requierd</p>
-                    <p *ngIf="monyForm.get('number')?.getError('pattern')" class="alert alert-danger" > card number should be16number</p>
+                <p *ngIf="monyForm.get('number')?.getError('required')" class="alert alert-danger" >card number is requierd</p>
+                <p *ngIf="monyForm.get('number')?.getError('pattern')" class="alert alert-danger" > card number should be16number</p>
                 </div>
                
                 <label for="name">CardName</label>
                 <input type="text" id="name" class="form-control mb-2" formControlName="name">
                 <!-- name errors ALERTS -->
-                    <div *ngIf="monyForm.get('name')?.errors&&monyForm.get('name')?.touched">
-                     <p *ngIf="monyForm.get('name')?.getError('required')" class="alert alert-danger" > name is requierd</p>
+                <div *ngIf="monyForm.get('name')?.errors&&monyForm.get('name')?.touched">
+                <p *ngIf="monyForm.get('name')?.getError('required')" class="alert alert-danger" > name is requierd</p>
+                </div>
+
+                <label for="phone">sernderNumber</label>
+                <input type="text" id="Mobile number" class="form-control mb-4" formControlName="phone" placeholder="entre your sender numeber">
+                <!-- reciver errors -->
+                <div *ngIf="monyForm.get('phone')?.errors&&monyForm.get('phone')?.touched" >
+                    <p *ngIf="monyForm.get('phone')?.getError('required')" class="alert alert-danger" > phone Number is requierd</p>
+                    <p *ngIf="monyForm.get('phone')?.getError('pattern')" class="alert alert-danger" > Please Enter Valid wallet Number</p>
                     </div>
 
-                <label for="mobieNumber">CvV</label>
-                <input type="text" id="mobieNumber" class="form-control " formControlName="cvv" >
+                <label for="cvv">CvV</label>
+                <input type="text" id="cvv" class="form-control " formControlName="cvv" >
                 <div *ngIf="monyForm.get('cvv')?.errors&&monyForm.get('cvv')?.touched">
                     <p *ngIf="monyForm.get('cvv')?.getError('required')" class="alert alert-danger" > cvvNumber is requierd</p>
                     <p *ngIf="monyForm.get('cvv')?.getError('pattern')" class="alert alert-danger" >cvv should be 3Numbers</p>
