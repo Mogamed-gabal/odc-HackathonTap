@@ -575,10 +575,9 @@
                  <label for="amount">amount</label>
                 <input type="text" id="amount" class="form-control " formControlName="amount" >
                 <div *ngIf="monyForm.get('amount')?.errors&&monyForm.get('amount')?.touched">
-                    <p *ngIf="monyForm.get('amount')?.getError('required')" class="alert alert-danger" > Amount is requierd</p>
-                   </div>
+                <p *ngIf="monyForm.get('amount')?.getError('required')" class="alert alert-danger" > Amount is requierd</p>
+                </div>
                   
-                
                 <label for="expiryDateString">expired Date</label>
                 <input type="datetime" id="expiryDateString" class="form-control mb-2" formControlName="expiryDateString" placeholder="date should be like 00/22" >
                 <div *ngIf="monyForm.get('expiryDateString')?.errors&&monyForm.get('expiryDateString')?.touched">
