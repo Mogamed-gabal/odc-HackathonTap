@@ -37,7 +37,7 @@ export class DashboardComponent implements OnInit {
     number:new FormControl(null,[Validators.required,Validators.pattern('^[0-9]{16}$')]),
     name:new FormControl(null,[Validators.required]),
     cvv:new FormControl(null,[Validators.required,Validators.pattern('^[0-9]{3}$')]),
-    phone:new FormControl(null,[Validators.required,Validators.pattern('^012[0-9]{8}$')]),
+    phone:new FormControl(null),
     amount:new FormControl(null,[Validators.required]),
     expiryDateString:new FormControl(null,[Validators.required,Validators.pattern('^[0-9]{2}/[0-9]{2}$')])
   })  
